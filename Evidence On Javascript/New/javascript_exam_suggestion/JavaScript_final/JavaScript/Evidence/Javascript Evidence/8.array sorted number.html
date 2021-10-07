@@ -1,0 +1,31 @@
+<html>
+<body>
+<script type="text/javascript">
+
+var arr = new Array();
+arr[0] = 10;
+arr[1] = 5;
+arr[2] = 40;
+arr[3] = 25;
+arr[4] = 26;
+arr[5] = 1000;
+arr[6] = 1;
+document.write("Original value= "+arr + "<br />");
+for(var i=0; i<arr.length; i++) 
+{   
+   for(var j=i+1; j<arr.length; j++)
+   {
+	   if(arr[i]>arr[j])
+	   {
+	   var k=arr[i];
+	   arr[i]=arr[j];
+	   arr[j]=k;
+	   }
+   } 
+}
+document.write("Sorted value<br/>");
+document.write(arr);
+</script>
+
+</body>
+</html>

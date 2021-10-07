@@ -1,0 +1,142 @@
+
+Quiz-evidence mid_term
+
+
+1.Create a table with eid, ename, salary, hire_date and address columns.
+2.Set primary key on eid.
+3.Insert five record using substitution variables.
+4.Add two columns named as phone, job_title.
+5.Make a query with ename, job_title, salary and salary with 30% bonus.
+6.Make a query with ename, salary where salary is equal to minimum salary of employees.
+7.Update all job_title to manager.
+8.Create a view.10.Create a sequence increment by 1
+9.Create an index. On emp(eid)
+10.Create trigger for insert, update , delete on the above table.
+11.Insert 3 datas, update 1 data and delete 1 data.
+
+
+
+
+
+====================   Answer  ========================================
+
+-- ===========01 Table creating =================
+
+create table st(
+    eid number(10),
+    ename VARCHAR2(50),
+    salary varchar2(50),
+    hire_date date,
+    address_ VARCHAR2(50)
+
+
+);
+
+
+
+
+
+
+
+
+-- ==============02 Set Primary key ==================
+alter table st
+add primary key(eid);
+
+desc st;
+select * from st;
+
+
+
+
+
+-- ==============03 Insert row by substitution =========================
+insert into st values(&eid,'&ename','&salary','&hire_date','&address');                 
+
+
+
+
+
+
+
+
+
+-- ========== 04 Add two new column ==========
+alter table st
+add phone VARCHAR2(17);
+
+alter table st
+add job_title VARCHAR2(50);
+
+
+
+-- ============ 05  query with 30% bonus ============
+select ename,job_title,salary+(salary*30/100) "salary+bonus"
+from st;
+
+
+
+
+
+
+-- ===============06 Minimum Salary Query ==================
+
+select ename,salary from st
+where salary =(select min(salary) from st);
+
+
+
+
+-- ============07 Update all job_title ==========
+update st 
+set job_title= 'manager';
+
+
+select * from st;
+
+
+
+
+
+-- =============08 create view =====================
+
+create view v
+as select eid,ename,salary from st;
+
+select * from v;
+
+
+
+
+-- ==============09 create sequence ==================
+create sequence st_sequence
+start with 10
+increment by 1
+nocycle;
+
+
+insert into st(eid,ename,salary)values(st_sequence.nextval,'Alim','60000');
+
+desc st;
+select st_sequence.nextval from st;
+
+-- ==============10 create index ======================
+create index n_index
+on st (ename);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

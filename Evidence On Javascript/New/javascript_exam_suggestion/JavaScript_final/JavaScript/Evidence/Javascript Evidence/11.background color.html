@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change the color</title>
+</head>
+<body id="body">
+	<select id="select" onchange="cb()">
+		<option value="green">green</option>
+		<option value="blue">blue</option>
+		<option value="tomato">tomato</option>
+	</select>
+
+<script>
+function cb(){
+	var select = document.getElementById("select");
+	var color = select.options[select.selectedIndex].value;
+	document.getElementById("body").style.backgroundColor=color;}
+</script>
+</body>
+</html>

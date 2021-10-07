@@ -1,0 +1,36 @@
+<html>
+<head>
+<body>
+<script>
+var amt=0, discount=0;
+amt=prompt("Purchase amount","enter the purchase amount");
+if(amt<100)
+  {
+   document.write("Sorry, no discount"+"<br>");
+  }
+else if((amt>=100) && (amt<=300))
+  {
+   discount=10;
+   //document.write("Discount="+discount+"%"+"<br>");
+  }
+else if((amt>300) && (amt<=700))
+  {
+   discount=15;   
+  }
+else if((amt>700) && (amt<=1000))
+  {
+   discount=20;
+   //document.write("Discount="+discount+"%"+"<br>");
+  }
+else
+  {
+   discount=25;
+   //document.write(discount+"%"+"<br>");
+  }
+document.write("Discount="+discount+"%"+"<br>");
+amt=amt-((amt*discount)/100);
+document.write("Amount to be paid: "+amt);
+</script>
+</head>
+</body>
+<html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator test</title>
+</head>
+<body>
+<input type="text" name="" id="test">
+=
+<input type="button" name="" value="result" id="result" onclick="test()"><br>
+<input type="button" name="cal" value="4" onclick="add(1)">
+<input type="button" name="cal" value="5" onclick="add(2)">
+<input type="button" name="cal" value="6" onclick="add(3)">
+<input type="button" name="cal" value="7" onclick="add(4)"><br>
+
+<input type="button" name="cal" value="+" onclick="desc(1)">
+<input type="button" name="cal" value="-" onclick="desc(2)">
+<input type="button" name="cal" value="*" onclick="desc(3)">
+<input type="button" name="cal" value="/" onclick="desc(4)">
+
+
+	<script type="text/javascript">
+	
+function desc(xyz){
+	switch(xyz){
+		case 1:
+			 art = "+"
+		break;
+		case 2:
+			art = '-'
+		break;
+		case 3:
+			 art = "*"
+		break;
+		case 4:
+			 art = "/"
+		break;
+
+	}
+	var prev =	document.getElementById('test').value; 
+	document.getElementById('test').value =prev+ art;
+};
+
+ 			
+	function add(abc){
+				
+			switch(abc){
+				case 1:
+					res = "4"
+				break;
+				case 2:
+					res = '5'
+				break;
+				case 3:
+					 res = "6"
+				break;
+				case 4:
+					 res = "7"
+				break;
+
+			}
+			var prev =	document.getElementById('test').value; 
+		document.getElementById('test').value = prev+res;
+	}
+
+	
+		function test(){
+			var a = document.getElementById('test').value;
+			var b = eval(a);
+
+
+			document.getElementById('test').value = "Result is "+b;
+		}
+
+
+	</script>
+
+</body>
+</html>

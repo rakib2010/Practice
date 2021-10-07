@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td><label for="">Name</label></td>
+                <td><input type="text" id="stName"></td>
+            </tr>
+            <tr>
+                <td><label for="">ID</label></td>
+                <td><input type="text" id="stId"></td>
+            </tr>
+            <tr>
+                <td><label for="">Mobile</label></td>
+                <td><input type="text" id="stPhone"></td>
+            </tr>
+            <tr>
+                <td><label for="">Email</label></td>
+                <td><input type="email" id="stEmail"></td>
+            </tr>
+            <tr>
+                <td><label for="">Course</label></td>
+                <td>
+                    <select name="" id="course">
+                        <option value=""></option>
+                        <option value="java">Java</option>
+                        <option value="C#">C#</option>
+                        <option value="GAVE">GAVE</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Gender</label></td>
+                <td><input type="radio" id="male" name="gen">Male
+                    <input type="radio" id="female" name="gen">Female
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Address</label></td>
+                <td><textarea name="" id="address" ></textarea></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="SUbmit" id="submit" onclick="formValid()"></td>
+            </tr>
+
+        </table>
+    </form>
+    <span id="errorMsg"></span>
+
+    <script>
+        var stName = document.getElementById("stName");
+        var stId = document.getElementById("stId");
+        var stPhone = document.getElementById("stPhone");
+        var stEmail = document.getElementById("stEmail");
+        var course = document.getElementById("course");
+        var male = document.getElementById("male");
+        var female = document.getElementById("female");
+        var address = document.getElementById("address");
+        var errorMsg = document.getElementById("errorMsg");
+        var emailRegx = /^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,5}$/;
+
+        function formValid(){
+            errorMsg.innerHTML ="";
+            if(stName.value ==""){
+                errorMsg.innerHTML += "Name field can not be empty";
+            }
+            else if (stId.value.length !=7){
+                errorMsg.innerHTML += "ID length must be 7 Character";
+            }
+            else if(stPhone.value.length <11){
+                errorMsg.innerHTML += "Mobile Number length Minimum 11 character";
+            }else if(!emailRegx.test(stEmail.value)){
+                errorMsg.innerHTML += "Email is Invalid";
+            }
+            else if (course.value ==""){
+                errorMsg.innerHTML += "course Can not be empty";
+            }
+        
+            else if(!male.checked && !female.checked){
+                errorMsg.innerHTML += "please select your gender";
+            }
+            else if(address.value ==""){
+                errorMsg.innerHTML += "please input your address";
+            }
+            else {
+                var gen = "";
+                if(male.checked){
+                    gen = "male";
+                }
+                if(female.checked){
+                    gen = "female";
+                }
+                var html = ` 
+                
+                Student Name ${stName.value} <br />
+                Student ID ${stId.value} <br />
+                Student Phone ${stPhone.value} <br />
+                Course Name ${course.value} <br />
+                Student Gender ${gen} <br />
+                Student Address ${address.value} <br />
+               
+                `
+
+                errorMsg.innerHTML += "Form Successfully Submitted  <br />";
+                //errorMsg.innerHTML += html;
+                var newWindow = window.open("","",width="500", height="300");
+                newWindow.document.write(html);
+               
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

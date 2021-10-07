@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+
+    <h1>Email Checker</h1>
+    Email:<input type="email" id="email" placeholder="Type your Email here">
+    <span id="show"></span><br>
+    <input type="button" value="Check" onclick="validation()">
+
+    <script>
+        
+        function validation(){
+
+            var input = document.getElementById("email").value;
+            var regEx = /^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
+            
+            if(!input.match(regEx)){
+                document.getElementById("show").innerHTML = "Please enter valid email";
+
+
+            }
+            else{
+                document.getElementById("show").innerHTML = input+ " is valid email";
+            }
+
+
+        }
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email validation check</title>
+    <style>
+        span{
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <form onkeydown="validation()">
+    <h1>Email validation check</h1>
+    <label>Email :</label>
+    <input type="email" id="email" placeholder="Input your email address">
+    <span></span>
+    <br /><br />
+    
+    </form>
+    <script>
+        function validation(){
+            var inputValue = document.getElementById("email").value;
+            var regEx = /^([a-zA-Z0-9\.\_])+@([a-zA-Z])+\.([a-z]{2,5})$/;
+                                          
+          
+
+            if (inputValue.match(regEx)){
+                document.querySelector("span").innerHTML = inputValue +" = is valid email";
+                document.querySelector("span").style = "color:blue";
+
+            }
+            else {
+                document.querySelector("span").innerHTML = inputValue +" = is not valid email";
+                document.querySelector("span").style = "color:red";
+            }
+            
+
+
+
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Number</title>
+</head>
+<body>
+    <h1>Factorial Number Check</h1>
+    <input type="number" id="fact" placeholder="Enter your desire Number">
+    <span id="show"></span> <br> <br>
+    <input type="button" value="Check" onclick="checker()">
+
+    <script>
+       
+
+        function checker(){
+                var input = document.getElementById("fact").value;
+                var fact = 1;
+            for (i =1; i<=input; i++){
+                fact = fact* i;
+               
+            }
+            document.getElementById("show").innerHTML = "Factorial = "+ fact;
+            
+        }
+    //     var userInput = parseInt(prompt("Input number here"));
+    //    var  factorial = 1;
+    //     for (i=1; i<=userInput; i++){
+    //         factorial*=i;
+            
+
+    //     }
+    //     document.write(factorial);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

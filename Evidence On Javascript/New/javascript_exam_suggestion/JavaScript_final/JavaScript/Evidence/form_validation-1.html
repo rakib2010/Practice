@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form Validation</title>
+</head>
+
+<body>
+	<h1>Student Form</h1>
+    <table>
+    	<tr>
+        	<td>Id</td>
+            <td><input type="text" name="id" id="st_id"/></td>
+        </tr>
+        <tr>
+        	<td>Name</td>
+            <td><input type="text" name="st_name" id="st_name"/</td>
+        </tr>
+        <tr>
+        	<td>Gender</td>
+            <td>
+            	<input type="radio" name="st_gen" id="st_male" checked/>Male
+                <input type="radio" name="st_gen" id="st_female"/>Female
+            </td>
+        </tr>
+        <tr>
+        	<td>Course</td>
+            <td>
+            	<select name="course" id="st_course">
+                	<option value="WPSI">WPSI</option>
+                    <option value="J2EE">J2EE</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+        	<td></td>
+            <td><button onClick="validate()">Submit</button></td>
+        </tr>
+    </table>
+    <script>
+    	function validate(){
+			var isId = false;
+			var isName = false;
+			var id = document.getElementById('st_id').value;
+			var name = document.getElementById('st_name').value;
+			var male = document.getElementById('st_male').checked;
+			var female = document.getElementById('st_female').checked;
+			var course = document.getElementById('st_course').value;
+			var gen = '';
+			if (male) {
+				gen = "male";
+				}
+			if (female) {
+				gen = "female";
+				}
+				if (id.length>2 && id.length<11){
+					isId = true;
+					} else {
+						alert ("Id not valid");
+						return;
+						}
+				if (name.length>5 && name.length<20) {
+					isName = true;
+					} else {
+						alert ("Name not valid");
+						return;
+						}
+				if (isId && isName) {
+					var w = window.open();
+					var html = "<html>"
+						+"<head></head>"
+						+"<body>"
+							+"<p>Student Id: "+id+" </p>"
+							+"<p>Student Name: "+name+" </p>"
+							+"<p>Gender: "+gen+" </p>"
+							+"<p>Selected Course: "+course+" </p>"
+						+"</body>"
+						+"</html>"
+						w.document.write(html);
+					}
+			}
+    </script>
+</body>
+</html>

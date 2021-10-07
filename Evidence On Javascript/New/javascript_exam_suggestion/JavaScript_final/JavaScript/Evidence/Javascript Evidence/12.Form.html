@@ -1,0 +1,119 @@
+<doctype html>
+<html>
+<head>
+<title> form1 Form </title>
+<script type="text/javascript">
+function checkEmail(strng){
+var error = "";
+var atpos = strng.indexOf("@");
+var dotpos = strng.lastIndexOf(".");
+     if(atpos<1 || dotpos<=atpos+2 || dotpos+2>=strng.length){
+	 error="Please enter a valid email address";
+	 alert(error);
+	 return false;
+	}
+return true;
+}
+
+function checkForm(){
+var allthings="";
+for (i=0; i<3; i++){
+       var box = document.forms['form1'].elements[i];
+	   if(!box.value){
+	     alert("You haven't filled in"+ box.name+"!");
+		 box.focus()
+		 return false;
+	   }
+	   allthings += box.name + ":" + box.value + "<br>";
+    } 
+    if(!checkEmail (document.forms['form1'].elements[2].value)){
+	(document.forms[form1].elements[2].focus()
+	return false;
+	}
+user_input = document.forms['form1'].courses.value;
+	allthings += "courses : " + user_input + '<br>';
+user_select = document.forms['form1'].select.value;
+	allthings += "Area : " + user_select + '<br>';
+var courseLeng = document.forms[0].education.length;
+	var courseResult="";
+	for(var i=0; i<courseLeng; i++){
+	courseValue = document.forms['form1'].education[i].checked;
+		if(courseValue){
+		courseResult += document.forms['form1'].education[i].value+" ";
+		}
+	}
+	allthings += "education : " + courseResult + '<br>';
+a=open("","","");	
+	a.document.write(allthings);	
+	
+}
+</script>
+</head>
+
+<body>
+<form name="form1" method="post" action="" onsubmit="checkForm() ; return false">
+  <table width="360" border="0">
+    <tr>
+      <td width="81">Name</td>
+      <td width="20">:</td>
+      <td width="237">
+        <input name="name" type="text" id="name">
+     </td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>:</td>
+      <td>
+        <textarea name="address" id="address"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>:</td>
+      <td>
+        <input name="email" type="text" id="email">
+      </td>
+    </tr>
+    <tr>
+      <td>Courses</td>
+      <td>:</td>
+      <td>
+        <input name="courses" type="radio" value="NT">
+      NT
+        <input name="courses" type="radio" value="JAVA">
+      JAVA
+        <input name="courses" type="radio" value="GAVE">
+      GAVE</td>
+    </tr>
+    <tr>
+      <td>Area</td>
+      <td>:</td>
+      <td>
+        <select name="select">
+          <option value="Motijheel">Motijheel</option>
+          <option value="Polton">Polton</option>
+          <option value="Kakrile">Kakrile</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Education</td>
+      <td>:</td>
+      <td>
+        <input type="checkbox" name="education" value="SSC">
+      SSC
+        <input type="checkbox" name="education" value="HSC">
+      HSC
+        <input type="checkbox" name="education" value="BBA">
+      BBA</td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <input type="submit" name="Submit" value="Submit">
+        <input type="reset" >
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

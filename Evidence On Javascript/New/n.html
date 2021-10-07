@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        
+</head>
+
+<body>
+    <fieldset>
+        <legend>Student Information</legend>
+ <form action="">
+
+
+            <table>
+
+                <tr>
+                    <td>ID</td>
+                    <td><input type="text" id="value1" required></td>
+                </tr>
+                <tr>
+                    <td>NAME</td>
+                    <td><input type="text" id="value2" required></td>
+                </tr>
+                <tr>
+                    <td>MOBILE NO.</td>
+                    <td><input type="text" id="value3"></td>
+                </tr>
+                <tr>
+                    <td>ADDRESS</td>
+                    <td><textarea name="address" id="value4" cols="22" rows="3"></textarea></td>
+                </tr>
+                <tr>
+                    <td>EMAIL</td>
+                    <td><input type="email" id="value5"></td>
+                </tr>
+                <tr>
+                    <td>GENDER</td>
+                    <td><input type="radio" id="M" value="male"  name="gen">Male 
+                     <input type="radio" id="F" value="female" name="gen">Female 
+                     <input type="radio" id="O" value = "others" name="gen">Others</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button value="submit" id="value6" onclick="information()">Submit</button></td>
+                </tr>
+                <tr>
+                    <td><p id="status" >Status:</p></td>
+                    
+                </tr>
+
+            </table>
+        </form>
+     </fieldset>
+
+    <script>
+        function information(){
+
+            var id=document.getElementById("value1").value;
+            var name=document.getElementById("value2").value;
+            var phonNo=document.getElementById("value3").value;
+            var address=document.getElementById("value4").value;
+            var email=document.getElementById("value5").value;
+            var gender="";
+            var p=document.getElementById("status");
+
+            var m = document.getElementById('M');
+            var f = document.getElementById('F');
+            var o = document.getElementById('O');
+            
+            
+            p.innerHTML =  "";
+
+           if (id==""){
+                p.innerHTML +="invalid ID";
+           }else {
+               p.innerHTML += "";
+           }
+
+           if (name==""){
+                p.innerHTML +="<br>invalid name";
+           }else {
+               p.innerHTML += "";
+           }
+           if (phonNo==""){
+                p.innerHTML +="<br>invalid phone";
+           }else {
+               p.innerHTML += "";
+           }
+
+           if (address==""){
+                p.innerHTML +="<br>invalid address";
+           }else {
+               p.innerHTML += "";
+           }
+           if (email==""){
+                p.innerHTML +="<br>invalid email";
+           }else {
+               p.innerHTML += "";
+           }
+
+           console.log(gender);
+
+          
+           if(!m.checked && !f.checked && !o.checked){
+            p.innerHTML += "<br>Please select Gender";
+           }else{
+               if(m.checked){
+                   gender= "male";
+               }else if(f.checked){
+                   gender = "female";
+               }else if(o.checked){
+                   gender = "others";
+               }
+        
+           }
+
+           console.log(gender);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td> <input type="text" id="name" placeholder="Type your name"></td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td> <input type="number" id="id" placeholder="Type 6 digit id"></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="text" id="password" placeholder="Your password"></td>
+    </tr>
+
+    <tr>
+      <td>Email</td>
+      <td><input type="email" id="email" placeholder="Your enail"></td>
+    </tr>
+
+    <tr>
+      <td>Gender</td>
+      <td><input type="radio" id="male" value="Male" name="gen" >Male
+      <input type="radio" id="female" value="Female" name="gen" >Female</td>
+    </tr>
+
+    
+      
+    
+
+
+
+
+
+
+
+
+
+  </table>
+  <input type="button" value="Submit" onclick="validaton()"> <br> <br>
+  <span id="show"></span>
+
+
+
+
+<script>
+  function validaton(){
+    var name = document.getElementById("name").value;
+    var id = document.getElementById("id").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var gender = document.getElementById("email").value;
+    var male = document.getElementById("male");
+    var female = document.getElementById("female");
+    var regEx = /^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
+    show.innerHTML = "";
+    
+    if(name == ""){
+      show.innerHTML += "Name can not be empty <br>";
+
+    }
+
+    else if (id.length != 6){
+      show.innerHTML += "ID can not be empty <br>";
+
+    }
+
+    else if(password == ""){
+      show.innerHTML += "Password can not be empty <br>";
+
+    }
+
+    else if(!email.match(regEx)){
+      show.innerHTML += "Email does not match <br>";
+
+    }
+
+    else if(!male.checked && !female.checked){
+      show.innerHTML += "Gender can not be empty <br>";
+
+    }
+
+    else {
+      show.innerHTML += "Your form is submitted successfully <br> <br>";
+    }
+
+
+
+    var html1 = `
+     Name ${name} <br>
+     Email ${email} <br>
+     ID ${id} <br>
+     Password ${password} <br>
+     Gender : ${male.value} <br>
+     Gender : ${female.value} <br>
+     
+    
+    
+    
+    
+    
+    `
+    show.innerHTML += html1;
+
+
+
+
+    
+  }
+  
+  
+  
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

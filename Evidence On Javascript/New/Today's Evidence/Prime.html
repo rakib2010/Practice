@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    <style>
+        #show{
+            font-size: 32pt;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prime Number Checker</h1>
+    Input <input type="number" id="num" placeholder="Enter Number"> <br> <br>
+    <input type="button" value="Check" onclick="primeCheck()"> <br> <br>
+    <span id="show"></span>
+
+
+    <script>
+        function primeCheck(){
+            var inputValue = document.getElementById("num").value;
+            if(inputValue<2){
+                show.innerHTML = inputValue+ " is not Prime Number ";
+                show.style ="color:red";
+            }
+            if(inputValue == 2){
+                show.innerHTML = inputValue+ " is Prime Number ";
+                show.style ="color:green";
+            }
+
+            for( var i=2; i<inputValue; i++){
+                if(inputValue % i == 0){
+                    show.innerHTML = inputValue+ " is Not Prime Number ";
+                    show.style ="color:red";
+                    break;
+                }
+                else{
+                    show.innerHTML = inputValue+ " is Prime Number ";
+                    show.style ="color:green";
+                }
+
+            }
+
+
+            
+        }
+    </script>
+    
+</body>
+</html>
