@@ -1,0 +1,107 @@
+body{
+	margin:0;
+	padding:0;
+	background-image: url(Photo/3.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: cover;
+	
+}
+
+
+
+.container{
+	width:30%;
+	background-image: linear-gradient(#352bce, #35e47b,#0a596f);
+	margin: auto;
+	margin-top:80px;
+	height: 653px;
+	border-radius: 10px;
+	
+	
+	
+	
+}
+.form{
+	text-align: center;
+	
+	
+}
+
+.h1{
+	text-align: center;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 13px;
+	border: 1px solid black;
+	background-color: rgb(49, 138, 76);
+	color: azure;
+	border-radius: 10px;
+
+	
+}
+
+.input{
+	text-align: center;
+	
+}
+
+form{
+	margin: 37px;
+}
+
+.name {
+    margin-left: 38px;
+    width: 258px;
+}
+
+.id {
+    margin-left: 59px;
+    width: 258px;
+}
+
+.password {
+    margin-left: 13px;
+    width: 258px;
+}
+
+.email {
+    margin-left: 36px;
+    width: 258px;
+}
+
+
+.select {
+    margin-left: 22px;
+    width: 145px;
+}
+
+.gender{
+	margin-left: 26px;
+	
+	
+}
+
+.checkbox{
+	margin-left:35px;
+	
+	
+	
+}
+
+
+
+.textbox {
+    width: 272px;
+    margin-left: 65px;
+}
+
+.submit {
+    width: 177px;
+    height: 41px;
+	margin-left: 106px;
+	background-image: radial-gradient(#8dd4ef, #1512dc, #212b2b);
+	color: azure;
+	border-radius: 10px;
+	border: none;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Practice</title>
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            
+            background: linear-gradient(#cc00ff, #ff0000b5, #0000ffb0,black);
+            
+            
+
+            }
+            
+            
+      
+        table, tr, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 60%;
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            border-width: 2px;
+            margin-top: 100px;
+        }
+        .thead{
+            background-color: rgb(0, 60, 255);
+            color: azure;
+        }
+
+        .body{
+            background-color: rgb(74, 221, 226);
+
+
+        }
+        
+       
+
+
+    </style>
+</head>
+<body>
+    
+        <table>
+            <thead>
+            <tr class="thead"> <th>Name</th> <th>Address</th> <th>Contact</th> <th>Email</th> <th>Salary</th> </tr>
+           </thead>
+
+           <tbody class="body">
+            <tr> <td colspan="3">Rakib</td>  <td>rakib@gmail.com</td> <td>500000</td>    </tr>
+            <tr> <td>Rakib</td> <td>Dhaka</td> <td>017718866333</td> <td>rakib@gmail.com</td> <td>500000</td>    </tr>
+            <tr> <td>Rakib</td> <td>Dhaka</td> <td>017718866333</td> <td>rakib@gmail.com</td> <td>500000</td>    </tr>
+            <tr> <td>Rakib</td> <td>Dhaka</td> <td>017718866333</td> <td rowspan="4">rakib@gmail.com</td> <td>500000</td>    </tr>
+            <tr> <td colspan="3" rowspan="3">Rakib</td>  <td>500000</td>    </tr>
+            <tr>   <td>500000</td>    </tr>
+            <tr>   <td>500000</td>    </tr>
+        </tbody>
+
+
+
+        </table>
+
+
+
+    
+
+
+
+
+
+
+
+    
+</body>
+</html>
